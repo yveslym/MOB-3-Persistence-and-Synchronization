@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y08-0E-vkV">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="IntermediateAutoLayout" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vqi-dU-PDq">
+                                <rect key="frame" x="118" y="35" width="257" height="30"/>
+                                <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</string>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtO-nC-Rfk">
+                                <rect key="frame" x="15" y="40" width="88" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Vqi-dU-PDq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="1ds-lq-tyl"/>
+                            <constraint firstAttribute="trailing" secondItem="Vqi-dU-PDq" secondAttribute="trailing" id="2kP-a9-gl9"/>
+                            <constraint firstItem="xtO-nC-Rfk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="Kdz-dl-TAJ"/>
+                            <constraint firstItem="xtO-nC-Rfk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="YSs-LT-Q6X"/>
+                            <constraint firstItem="Vqi-dU-PDq" firstAttribute="leading" secondItem="xtO-nC-Rfk" secondAttribute="trailing" constant="15" id="cc6-PS-Poz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3Tg-9t-SJH">
+            <objects>
+                <viewController id="y08-0E-vkV" customClass="ViewController" customModule="IntermediateAutoLayout" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4wh-ke-Xxc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Description in textfield" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ycy-Fy-Ns0">
+                                <rect key="frame" x="103" y="35" width="167" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Stx-2o-Uab">
+                                <rect key="frame" x="26" y="73" width="349" height="21"/>
+                                <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Stx-2o-Uab" secondAttribute="trailing" id="1pN-Hm-Xxq"/>
+                            <constraint firstItem="Stx-2o-Uab" firstAttribute="top" secondItem="Ycy-Fy-Ns0" secondAttribute="bottom" constant="8" id="3MI-i4-cys"/>
+                            <constraint firstItem="Ycy-Fy-Ns0" firstAttribute="top" secondItem="uHD-Zf-IWv" secondAttribute="top" constant="15" id="GTx-f5-trY"/>
+                            <constraint firstItem="Stx-2o-Uab" firstAttribute="leading" secondItem="uHD-Zf-IWv" secondAttribute="leading" constant="26" id="JeM-hf-l9P"/>
+                            <constraint firstItem="Ycy-Fy-Ns0" firstAttribute="leading" secondItem="uHD-Zf-IWv" secondAttribute="leading" constant="103.2" id="YC8-N4-hsL"/>
+                            <constraint firstItem="uHD-Zf-IWv" firstAttribute="trailing" secondItem="Ycy-Fy-Ns0" secondAttribute="trailing" constant="104.8" id="ZAT-bp-K9p"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uHD-Zf-IWv"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WH0-BL-bhS" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="966" y="134"/>
+        </scene>
+    </scenes>
+</document>
