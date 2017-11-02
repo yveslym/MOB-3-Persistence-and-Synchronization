@@ -23,6 +23,7 @@ class Networking{
                 guard let data = data else {return}
                 let document = try JSONDecoder().decode([Document].self, from: data)
                 print(document)
+                return completion(document)
             }
             catch{print("error happen")}
         }
