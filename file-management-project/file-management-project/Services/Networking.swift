@@ -10,7 +10,7 @@ import Foundation
 class Networking{
     
     static func network(completion: @escaping ([Document]?)->Void){
-   let link = "https://api.myjson.com/bins/1165qr"
+   let link = "https://api.myjson.com/bins/17ge17"
         guard let url = URL(string: link) else {return}
         
         var request = URLRequest(url: url)

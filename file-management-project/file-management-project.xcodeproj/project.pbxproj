@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20323B041FAD15630099EE0E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20323B031FAD15630099EE0E /* TableViewController.swift */; };
+		20323B061FAD16050099EE0E /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20323B051FAD16050099EE0E /* ImageTableViewCell.swift */; };
 		2080A9D61FA9706A007186C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2080A9D51FA9706A007186C7 /* AppDelegate.swift */; };
 		2080A9D81FA9706A007186C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2080A9D71FA9706A007186C7 /* ViewController.swift */; };
 		2080A9DB1FA9706A007186C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2080A9D91FA9706A007186C7 /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		13DD3873EAC5557AD08BC7F2 /* Pods-file-management-project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-file-management-project.release.xcconfig"; path = "Pods/Target Support Files/Pods-file-management-project/Pods-file-management-project.release.xcconfig"; sourceTree = "<group>"; };
+		20323B031FAD15630099EE0E /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		20323B051FAD16050099EE0E /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		2080A9D21FA9706A007186C7 /* file-management-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "file-management-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2080A9D51FA9706A007186C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2080A9D71FA9706A007186C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +59,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		20323B021FAD15370099EE0E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				20323B031FAD15630099EE0E /* TableViewController.swift */,
+				20323B051FAD16050099EE0E /* ImageTableViewCell.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		2080A9C91FA9706A007186C7 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +89,7 @@
 		2080A9D41FA9706A007186C7 /* file-management-project */ = {
 			isa = PBXGroup;
 			children = (
+				20323B021FAD15370099EE0E /* Controllers */,
 				2080A9EA1FA970B3007186C7 /* Model */,
 				2080A9E71FA9708A007186C7 /* Services */,
 				2080A9D51FA9706A007186C7 /* AppDelegate.swift */,
@@ -242,7 +256,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20323B061FAD16050099EE0E /* ImageTableViewCell.swift in Sources */,
 				2080A9EE1FA991B0007186C7 /* Downloader.swift in Sources */,
+				20323B041FAD15630099EE0E /* TableViewController.swift in Sources */,
 				2080A9E91FA970A4007186C7 /* Networking.swift in Sources */,
 				2080A9EC1FA970CB007186C7 /* Document.swift in Sources */,
 				2080A9D81FA9706A007186C7 /* ViewController.swift in Sources */,

@@ -7,13 +7,13 @@
 //
 
 import Foundation
+import Zip
 class Downloader{
     
-    static func download(from link: String?, to localUrl:String, completion: @escaping (URL)->Void){
-       
+    static func download(from link: String?, to localUrl:String, completion: @escaping (URL?)->Void){
+        
         //get the download link and local url (path)
         guard let link = link else {return}
-        guard let localUrl = URL(string:localUrl) else {return}
         
         let url = URL(string: link)
         
@@ -23,16 +23,31 @@ class Downloader{
         
         let session = URLSession.shared
         let task = session.downloadTask(with: request) { (tempLocalUrl, response, error) in
-            if error != nil{
-                print("tast return error")
-            }
-            do{
-                try FileManager.default.copyItem(at: tempLocalUrl!, to: localUrl)
-                
-                return completion(localUrl)
-            }
-            catch{print ("error happen when downloading zip")}
+            guard let tempLocalUrl = tempLocalUrl else {return completion(nil)}
+            return completion(tempLocalUrl)
         }
         task.resume()
     }
+    
+    static func unZip(tempUrl:URL, destination: URL, completion:@escaping(URL?)->Void){
+        do{
+            Zip.addCustomFileExtension("tmp")
+            try Zip.unzipFile(tempUrl, destination: destination, overwrite: true, password: nil, progress: { (progress) -> () in
+                print(progress)
+            }) // Unzip
+        }
+        catch _{
+            print("error when unzipping")
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+

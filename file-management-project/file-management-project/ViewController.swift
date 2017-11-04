@@ -10,79 +10,66 @@ import UIKit
 import Zip
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         Networking.network(completion: {documnet in
-    let url = URL(string: (documnet?[2].zipped_images_url)!)
-            let localUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-            let filePath = localUrl?.appendingPathComponent((documnet?[2].collection_name)!)
             
-            let sessionConfig = URLSessionConfiguration.default
-            let session = URLSession(configuration: sessionConfig)
-            let request = URLRequest(url: url!)
+            let fileManager = FileManager.default
             
-            let task = session.downloadTask(with: request) { (tempLocalUrl, response, error) in
-                if let tempLocalUrl = tempLocalUrl, error == nil {
-                    // Success
-                    if let statusCode = (response as? HTTPURLResponse)?.statusCode {
-                        print("Success: \(statusCode)")
-                    }
-                    
-                    do {
-                       try FileManager.default.copyItem(at: tempLocalUrl, to: localUrl!)
-                        let unzipDirectory = try Zip.quickUnzipFile(filePath!) // Unzip
-                        
-                    } catch (let writeError) {
-                        print("error writing file \(localUrl) : \(writeError)")
-                    }
-                    
-                } else {
-                    print("Failure: %@", error?.localizedDescription);
-                }
-            }
-            task.resume()
+            let caches = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first
+            
+            
+            Downloader.download(from: documnet?[0].zipped_images_url, to: (caches?.path)!, completion: { (tempUrl) in
+                
+                Downloader.unZip(tempUrl: tempUrl!, destination: caches!, completion: { (unzipedURL) in
+                   
+                })
+                print(tempUrl)
+                
+                
+            })
+            
+            
         
-})
+        })
+    }
+    
 }
-}
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
 //let path2 = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
 //let urlPath2 = URL(fileURLWithPath: path)
@@ -130,6 +117,6 @@ class ViewController: UIViewController {
 //        // Dispose of any resources that can be recreated.
 //    }
 
-        
+
 //}
 
