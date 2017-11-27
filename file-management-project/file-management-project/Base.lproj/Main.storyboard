@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--table-->
         <scene sceneID="50U-up-AOi">
             <objects>
-                <tableViewController id="GAj-gu-g3p" customClass="TableViewController" customModule="file_management_project" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="table" title="table" id="GAj-gu-g3p" customClass="TableViewController" customModule="file_management_project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="j2g-ru-tVU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,6 +39,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qr2-tA-mEN">
                                                     <rect key="frame" x="250" y="0.0" width="125" height="88"/>
                                                     <state key="normal" title="download"/>
+                                                    <connections>
+                                                        <action selector="downloadImage:" destination="uNR-Lu-SmV" eventType="touchUpInside" id="C3o-Pl-zYK"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>

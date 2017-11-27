@@ -12,3 +12,11 @@ struct Document: Decodable{
     var collection_name: String
     var zipped_images_url: String
 }
+
+struct DocDefault{
+    static var currentDocument: Document?
+}
+
+protocol documentDelegate: class {
+    func buttonTag(tag: Int, selected:Bool?)
+}

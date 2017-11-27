@@ -8,13 +8,24 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController, documentDelegate {
+    
+    func buttonTag(tag: Int, selected: Bool?) {
+         self.buttonTag = tag
+        self.buttonSelected = selected
+    }
+    
+    var buttonSelected: Bool? = nil
+    var buttonTag : Int? = nil
+    
+    let delegateDoc: documentDelegate? = nil
     
     var myDocument : [Document]? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     
     func DownloadImage(document: Document?, completion: @escaping([URL]?)->Void){
         
@@ -50,6 +61,9 @@ class TableViewController: UITableViewController {
             DispatchQueue.main.sync {
                 self.myDocument = document
                 self.tableView.reloadData()
+                self.tableView.reloadInputViews()
+                self.reloadInputViews()
+//                self.tableView.cellForRow(at: <#T##IndexPath#>)
             }
         }
     }
@@ -63,24 +77,27 @@ class TableViewController: UITableViewController {
         if self.myDocument?.count != nil{
         return (self.myDocument?.count)!
         }
-        return 0
+        return 1
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ImageTableViewCell
-        cell.imageName.text = self.myDocument?[indexPath.row].collection_name
-        cell.indexPath = indexPath
-        if cell.downloadButton.isSelected {
-            self.DownloadImage(document: self.myDocument?[indexPath.row], completion: { (imageUrlList) in
+        
+        cell.downloadButton.tag = indexPath.row
+        
+        cell.imageName.text = self.myDocument?[indexPath.row].collection_name ?? ""
+        
+            if self.buttonSelected != nil {
+                self.DownloadImage(document: self.myDocument?[self.buttonTag!], completion: { (imageUrlList) in
                 guard let imageUrlList = imageUrlList else {return}
                 DispatchQueue.main.sync {
                     cell.imageView?.image = UIImage(contentsOfFile: (imageUrlList[0].path))
                     self.tableView.reloadData()
                 }
             })
-        }
-        
+            }
+       
         return cell
     }
     
